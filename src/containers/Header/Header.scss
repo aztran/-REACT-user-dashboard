@@ -1,0 +1,22 @@
+.header {
+  // display: flex;
+ .header-wrapper {
+  
+  border-bottom: 1px solid #eee;
+  &--blue {
+    background-color: #1890ff;
+  }
+ }
+  &__top {
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 20px;
+  }
+}
