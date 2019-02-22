@@ -27,11 +27,6 @@ class Header extends Component {
             <h3 className="header__title">Dashboard</h3>
           </div>
         </div>
-        <div className="header-wrapper">
-          <div className="header__bottom">
-            <MenuItem />
-          </div>
-        </div>
       </div>
     );
   }

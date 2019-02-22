@@ -1,16 +1,37 @@
 import React, { Component } from 'react';
 import axios from '../../axios';
-import { Card } from 'antd';
+import { Card, Row, Col } from 'antd';
+
+import './UserPost.scss';
 
 
-import PostUser from '../../components/Posts/PostUser';
+import BaseTable from '../../components/Table/BaseTable';
 
 class UserPost extends Component {
 
   state = {
     posts: [],
     user: [],
-    nama: 'a'
+    albums: [],
+    nama: 'a',
+    columnsPost: [
+      {
+        title: 'Title',
+        dataIndex: 'title',
+        key: 'title',
+      }, {
+        title: 'Content',
+        dataIndex: 'body',
+        key: 'body',
+      }
+    ],
+    columnsAlbum: [
+      {
+        title: 'Title',
+        dataIndex: 'title',
+        key: 'title',
+      }
+    ]
   }
 
   componentDidMount() {
@@ -18,6 +39,10 @@ class UserPost extends Component {
 
     axios.get('/posts?userId='+id).then(response => {
         this.setState({posts: response.data});
+    });
+
+    axios.get('/albums?users='+id).then(response => {
+      this.setState({albums: response.data});
     });
 
     axios.get('/users/'+id).then(user => {
@@ -28,24 +53,31 @@ class UserPost extends Component {
   render() {
     return (
       <div className="user-post">
-        <Card title={this.state.user['name']} style={{ width: 300 }}>
-          <div className="card-user">
-            <p class="card-user__left">Website</p>
-            <p>{this.state.user['website']}</p>
-          </div>
-          <div className="card-user">
-            <p class="card-user__left">Email</p>
-            <p>{this.state.user['email']}</p>
-          </div>
-          <div className="card-user">
-            <p class="card-user__left">Phone</p>
-            <p>{this.state.user['phone']}</p>
-          </div>
-        </Card>
+        <div className="Posts">
+          <h3 className="posts__title">Profile</h3>
+          <Card title={this.state.user['name']} style={{ width: 300 }}>
+            <div className="card-user">
+              <p class="card-user__left">Website</p>
+              <p>{this.state.user['website']}</p>
+            </div>
+            <div className="card-user">
+              <p class="card-user__left">Email</p>
+              <p>{this.state.user['email']}</p>
+            </div>
+            <div className="card-user">
+              <p class="card-user__left">Phone</p>
+              <p>{this.state.user['phone']}</p>
+            </div>
+          </Card>
+        </div>
         <div className="Posts">
           <h3 className="posts__title">All Posts</h3>
         </div>
-        <PostUser data={this.state.posts}/>
+        <BaseTable data={this.state.posts} columns={this.state.columnsPost}/>
+        <div className="Posts">
+          <h3 className="posts__title">All Albums</h3>
+        </div>
+        <BaseTable data={this.state.albums} columns={this.state.columnsAlbum}/>
       </div>
     )
   }
