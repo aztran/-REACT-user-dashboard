@@ -1,0 +1,22 @@
+.ant-card {
+  width: 100% !important;
+}
+
+.card-user {
+  display: flex;
+  justify-content: space-between;
+
+  .card-user__left {
+    font-weight: bold;
+  }
+}
+
+.posts {
+  &__title {
+    background: #1890ff;
+    margin-top: 1rem;
+    color: white;
+    padding: 20px 0;
+    font-weight: bold;
+  }
+}
