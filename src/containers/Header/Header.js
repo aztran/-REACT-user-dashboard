@@ -23,8 +23,8 @@ class Header extends Component {
       <div className="header">
         <div className="header-wrapper--blue">
           <div className="header__top">
-            <h3 class="header__title">User</h3>
-            <h3 class="header__title">Dashboard</h3>
+            <h3 className="header__title">User</h3>
+            <h3 className="header__title">Dashboard</h3>
           </div>
         </div>
         <div className="header-wrapper">
