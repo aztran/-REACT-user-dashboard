@@ -3,13 +3,11 @@ import Header from './containers/Header/Header';
 import Sidebar from './containers/Sidebar/Sidebar';
 import { Layout, Menu, Icon } from 'antd';
 import Users from './components/Users/Users';
+import UserPost from './containers/UserPost/UserPost';
 import './App.scss';
 
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 const {Sider, Content } = Layout;
-
-
-
 class App extends Component {
   state = {
     collapsed: false,
@@ -20,6 +18,7 @@ class App extends Component {
       collapsed: !this.state.collapsed,
     });
   }
+
   render() {
     return (
       <BrowserRouter>
@@ -40,12 +39,12 @@ class App extends Component {
               <Content style={{ margin: '24px 16px 0' }}>
                 
                 <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
-                  <Route path="/users" component={Users}/>
+                  <Switch>
+                    <Route path="/users" exact={true} component={Users}/>
+                    <Route path="/:id" component={UserPost}/>
+                  </Switch> 
                 </div>
               </Content>
-              {/* <Footer style={{ textAlign: 'center' }}>
-                Ant Design ©2018 Created by Ant UED
-              </Footer> */}
             </Layout>
           </Layout>
         </div>
