@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import Header from './containers/Header/Header';
-import Sidebar from './containers/Sidebar/Sidebar';
-import { Layout, Menu, Icon } from 'antd';
-import Users from './components/Users/Users';
-import UserPost from './containers/UserPost/UserPost';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Layout } from 'antd';
+import Header from './components/layout/Header/Header';
+import Sidebar from './components/layout/Sidebar/Sidebar';
+import Users from './views/Users/Users';
+import UserPost from './views/UserPost/UserPost';
+import albumPhoto from './views/Album/Photo';
 import './App.scss';
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 const {Sider, Content } = Layout;
+
 class App extends Component {
   state = {
     collapsed: false,
@@ -37,11 +39,11 @@ class App extends Component {
             <Layout>
               <Header style={{ background: '#fff', padding: 0 }} />
               <Content style={{ margin: '24px 16px 0' }}>
-                
                 <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
                   <Switch>
                     <Route path="/users" exact={true} component={Users}/>
-                    <Route path="/:id" component={UserPost}/>
+                    <Route path="/post-user/:id" component={UserPost}/>
+                    <Route path="/photo-album/:id" component={albumPhoto}/>
                   </Switch> 
                 </div>
               </Content>

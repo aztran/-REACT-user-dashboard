@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 
-
-
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
-
 class Sidebar extends Component {
   handleClick = (e) => {
     console.log('click ', e);
@@ -18,7 +13,7 @@ class Sidebar extends Component {
         <Menu.Item key="1">
           <Icon type="user" />
           <span className="nav-text">Users</span>
-          <Link to="Users" />
+          <Link to="/Users" />
         </Menu.Item>
         <Menu.Item key="2">
           <Icon type="video-camera" />

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import axios from '../../axios';
-import { Card, Row, Col } from 'antd';
-
+import { Card } from 'antd';
+import { Link } from 'react-router-dom';
+import BaseTable from '../../components/common/Table/BaseTable';
 import './UserPost.scss';
-
-
-import BaseTable from '../../components/Table/BaseTable';
 
 class UserPost extends Component {
 
   state = {
+    isLoading: true,
     posts: [],
     user: [],
     albums: [],
@@ -30,6 +29,16 @@ class UserPost extends Component {
         title: 'Title',
         dataIndex: 'title',
         key: 'title',
+      },
+      {
+        title: 'Action',
+        render: (text,record) => (
+          <span>
+          <Link to={'/photo-album/'+record.id}>
+            View Photos
+          </Link>
+          </span>
+        ) 
       }
     ]
   }
@@ -38,14 +47,17 @@ class UserPost extends Component {
     const { id } = this.props.match.params;
 
     axios.get('/posts?userId='+id).then(response => {
+        this.setState({isLoading: false})
         this.setState({posts: response.data});
     });
 
     axios.get('/albums?users='+id).then(response => {
+      this.setState({isLoading: false})
       this.setState({albums: response.data});
     });
 
     axios.get('/users/'+id).then(user => {
+      this.setState({isLoading: false})
       this.setState({user: user.data});
     });
     
@@ -55,17 +67,21 @@ class UserPost extends Component {
       <div className="user-post">
         <div className="Posts">
           <h3 className="posts__title">Profile</h3>
-          <Card title={this.state.user['name']} style={{ width: 300 }}>
+          <Card
+            loading={this.state.isLoading}
+            title={this.state.user['name']}
+            style={{ width: 300 }}
+          >
             <div className="card-user">
-              <p class="card-user__left">Website</p>
+              <p className="card-user__left">Website</p>
               <p>{this.state.user['website']}</p>
             </div>
             <div className="card-user">
-              <p class="card-user__left">Email</p>
+              <p className="card-user__left">Email</p>
               <p>{this.state.user['email']}</p>
             </div>
             <div className="card-user">
-              <p class="card-user__left">Phone</p>
+              <p className="card-user__left">Phone</p>
               <p>{this.state.user['phone']}</p>
             </div>
           </Card>
@@ -73,11 +89,21 @@ class UserPost extends Component {
         <div className="Posts">
           <h3 className="posts__title">All Posts</h3>
         </div>
-        <BaseTable data={this.state.posts} columns={this.state.columnsPost}/>
+        <BaseTable
+          id={this.state.posts.id}
+          loading={this.state.isLoading}
+          data={this.state.posts}
+          columns={this.state.columnsPost}
+        />
         <div className="Posts">
           <h3 className="posts__title">All Albums</h3>
         </div>
-        <BaseTable data={this.state.albums} columns={this.state.columnsAlbum}/>
+        <BaseTable
+          id={this.state.albums.id}
+          loading={this.state.isLoading}
+          data={this.state.albums}
+          columns={this.state.columnsAlbum}
+        />
       </div>
     )
   }

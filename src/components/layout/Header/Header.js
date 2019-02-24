@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import './Header.scss';
 
-import { Menu, Icon } from 'antd';
-import MenuItem from './MenuItem/MenuItem';
-
-
-
 class Header extends Component {
   state = {
     current: 'mail',
