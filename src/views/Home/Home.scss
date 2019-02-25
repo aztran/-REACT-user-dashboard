@@ -1,0 +1,44 @@
+.p-8 {
+  padding: 8px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+  height: 100px;
+  background: blue;
+  padding: 10px;
+  
+  .panel__top {
+    font-size: 24px;
+    color: white;
+  }
+
+  .panel__bottom {
+    width: 100%;
+    font-size: 24px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.orange {
+  background-color: #ff9312;
+}
+
+.red {
+  background-color: #f1493d;
+}
+
+.soft-blue {
+  background-color: #0b95a7;
+}
+
+.green {
+  background-color: #0a8454;
+}

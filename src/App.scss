@@ -11,9 +11,29 @@
     }
   }
 
+  &-sider {
+    background-color: #1479d6;
+
+    &__wrapper{
+      padding: 20px;
+      border: 1px solid #eee;
+      color: red;
+      height: 20vh;
+      border: none;
+      color: white;
+    }
+
+    &--icon {
+      width: 100px;
+    }
+   
+  }
  
 }
 
+.c-white {
+  color: white;
+}
 // .App-logo {
 //   animation: App-logo-spin infinite 20s linear;
 //   height: 40vmin;
