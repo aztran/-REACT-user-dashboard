@@ -11,7 +11,7 @@ class Sidebar extends Component {
     return (
       <Menu mode="inline" defaultSelectedKeys={['4']}>
         <Menu.Item key="1">
-          <Icon type="user" />
+          <Icon type="home" />
           <span className="nav-text">Home</span>
           <Link to="/" />
         </Menu.Item>
