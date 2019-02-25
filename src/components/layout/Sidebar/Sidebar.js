@@ -22,13 +22,9 @@ class Sidebar extends Component {
         </Menu.Item>
         <Menu.Item key="3">
           <Icon type="upload" />
-          <span className="nav-text">nav 3</span>
+          <span className="nav-text">Add Comment</span>
+          <Link to="/add-comment" />
         </Menu.Item>
-        <Menu.Item key="4">
-          <Icon type="user" />
-          <span className="nav-text">nav 4</span>
-        </Menu.Item>
-        
       </Menu>
     );
   }

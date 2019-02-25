@@ -7,6 +7,7 @@ import Users from './views/Users/Users';
 import UserPost from './views/UserPost/UserPost';
 import albumPhoto from './views/Album/Photo';
 import AddPost from './views/AddPost/AddPost';
+import AddComment from './views/AddComment/AddComment';
 import './App.scss';
 
 const {Sider, Content } = Layout;
@@ -46,6 +47,7 @@ class App extends Component {
                     <Route path="/post-user/:id" component={UserPost}/>
                     <Route path="/photo-album/:id" component={albumPhoto}/>
                     <Route path="/add-post" component={AddPost}/>
+                    <Route path="/add-comment" component={AddComment}/>
                   </Switch> 
                 </div>
               </Content>
