@@ -131,7 +131,6 @@ class UserPost extends Component {
                     <h5 className="modal-comment__sender">{comment.name} | {comment.email}</h5> 
                     <h6 className="modal-comment__body">{comment.body}</h6>
                   </div>
-                
                 )
               })
             }
