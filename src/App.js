@@ -6,6 +6,7 @@ import Sidebar from './components/layout/Sidebar/Sidebar';
 import Users from './views/Users/Users';
 import UserPost from './views/UserPost/UserPost';
 import albumPhoto from './views/Album/Photo';
+import AddPost from './views/AddPost/AddPost';
 import './App.scss';
 
 const {Sider, Content } = Layout;
@@ -44,6 +45,7 @@ class App extends Component {
                     <Route path="/users" exact={true} component={Users}/>
                     <Route path="/post-user/:id" component={UserPost}/>
                     <Route path="/photo-album/:id" component={albumPhoto}/>
+                    <Route path="/add-post" component={AddPost}/>
                   </Switch> 
                 </div>
               </Content>

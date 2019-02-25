@@ -12,12 +12,13 @@ class Sidebar extends Component {
       <Menu mode="inline" defaultSelectedKeys={['4']}>
         <Menu.Item key="1">
           <Icon type="user" />
-          <span className="nav-text">Users</span>
+          <span className="nav-text">View Users</span>
           <Link to="/Users" />
         </Menu.Item>
         <Menu.Item key="2">
           <Icon type="video-camera" />
-          <span className="nav-text">nav 2</span>
+          <span className="nav-text">Add Post</span>
+          <Link to="/add-post" />
         </Menu.Item>
         <Menu.Item key="3">
           <Icon type="upload" />
