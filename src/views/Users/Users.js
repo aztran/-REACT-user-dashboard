@@ -68,6 +68,13 @@ class Users extends Component {
             title="Name"
             dataIndex="name"
             key="name"
+            render={(text, record) => (
+              <span>
+                <Link to={'/post-user/'+record.id}>
+                  {text}
+                </Link>
+              </span>
+            )}
           />
           <Column
             title="Username"
@@ -78,6 +85,7 @@ class Users extends Component {
             title="Email"
             dataIndex="email"
             key="email"
+            width="50"
           />
           <Column
             title="Phone"
@@ -99,6 +107,7 @@ class Users extends Component {
               title="City"
               dataIndex="address.city"
               key="address.city"
+              width="50"
             />
             <Column
               title="street"
@@ -116,16 +125,7 @@ class Users extends Component {
               key="address.zipcode"
             />
           </ColumnGroup>
-          <Column
-            title="Action"
-            render={(text, record) => (
-              <span>
-                <Link to={'/post-user/'+record.id}>
-                  Check
-                </Link>
-              </span>
-            )}
-          />
+        
         </Table>
       </div>
     )
