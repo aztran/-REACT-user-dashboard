@@ -35,5 +35,4 @@ class Sidebar extends Component {
   }
 }
 
-// ReactDOM.render(<Sider />, mountNode); 
 export default Sidebar;

@@ -30,14 +30,11 @@ class Home extends Component {
     axios.get('/comments').then(comment => {
       this.setState({comments: comment.data.length});
     });
-    
-    
   }
 
   render() {
     return (
       <div>
-        {/* <h1>Created with React</h1> */}
         <Row>
           <Col span={6} className="p-8">
             <div className="panel orange">

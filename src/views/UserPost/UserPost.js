@@ -35,7 +35,6 @@ class UserPost extends Component {
         title: 'Action',
         render: (text,record) => (
           <span>
-           {/* <Button type="primary" onClick={this.showModal}> */}
            <Button type="primary" onClick={() => this.showModal(record.id)}>
             View All Comments
           </Button>
@@ -68,7 +67,6 @@ class UserPost extends Component {
   }
 
   showModal = (id) => {
-    
     axios.get('comments?postId='+id).then(response => {
       this.setState({selectedId: response.data});
       this.setState({
@@ -108,8 +106,8 @@ class UserPost extends Component {
       this.setState({isLoading: false})
       this.setState({user: user.data});
     });
-    
   }
+  
   render() {
     let modal = null;
     if (this.state.selectedId) {
@@ -141,10 +139,9 @@ class UserPost extends Component {
          </div>
        );
     }
+
     return (
-    
       <div className="user-post">
-      
         {modal}
         <div className="Posts">
           <h3 className="posts__title">Profile</h3>

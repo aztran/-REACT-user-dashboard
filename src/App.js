@@ -12,7 +12,7 @@ import AddComment from './views/AddComment/AddComment';
 import './App.scss';
 import logo from './assets/img/az.png';
 
-const {Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 
 class App extends Component {
   state = {

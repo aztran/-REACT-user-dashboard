@@ -96,8 +96,6 @@ class AddPost extends Component {
         visible: true,
       });
     }
-
-   
   }
 
   handleCancel = (e) => {
@@ -112,13 +110,11 @@ class AddPost extends Component {
   }
 
   deleteHandler = (id) => {
-    axios.delete('/posts/' +id.data)
-      .then(response => {
-        if(response.status) {
-          this.setState({message: 'Success', description: 'Post has ben delete'});
-          openNotificationWithIcon('info');
-        }
-      })
+    axios.delete('/posts/' +id.data).then(response => {
+      if(response.status) {
+        openNotificationWithIcon('info');
+      }
+    })
   }
 
   handleSubmit = (e) => {
@@ -167,7 +163,6 @@ class AddPost extends Component {
         this.setState({isLoading: false})
         this.setState({posts: response.data});
     });
-    
   }
 
   render() {

@@ -14,7 +14,6 @@ class Photo extends Component {
     maxValue: 10
   }
 
-
   componentDidMount() {
     const { id } = this.props.match.params;
     axios.get('photos?albumId='+id).then(response => {
@@ -39,42 +38,34 @@ class Photo extends Component {
   };
 
   render() {
-  let photoCard =this.state.photos;
-  //  photoCard = this.state.photos.map(photo => {
-  //    return <BaseCard 
-  //             width="500"
-  //             img={photo.url}
-  //             alt={photo.title}
-  //             title={photo.title}
-  //           />
-  //  })
+
+    let photoCard =this.state.photos;
+
     return (
-    <div>
-      <h3>Display All Photos</h3>
-      <Row>
-        {photoCard && photoCard.length > 0 && photoCard.slice(this.state.minValue, this.state.maxValue).map(val => (
-          <Col span={12} key={val.id}> 
-           <div className="card-photo">
-            <BaseCard 
-              loading={this.state.isLoading}
-              img={val.url}
-              alt={val.title}
-              title={val.title}
-            />
-           </div>
-          </Col>
-        ))}
-      </Row>
-     
-      <Pagination
-          defaultCurrent={1}
-          // defaultPageSize={10}
-          onChange={this.handleChange}
-          total={photoCard.length}
-          showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
-          pageSize={10}
-        />
-    </div>
+      <div>
+        <h3>Display All Photos</h3>
+        <Row>
+          {photoCard && photoCard.length > 0 && photoCard.slice(this.state.minValue, this.state.maxValue).map(val => (
+            <Col span={12} key={val.id}> 
+            <div className="card-photo">
+              <BaseCard 
+                loading={this.state.isLoading}
+                img={val.url}
+                alt={val.title}
+                title={val.title}
+              />
+            </div>
+            </Col>
+          ))}
+        </Row>
+        <Pagination
+            defaultCurrent={1}
+            onChange={this.handleChange}
+            total={photoCard.length}
+            showTotal={(total, range) => `${range[0]}-${range[1]} of ${total} items`}
+            pageSize={10}
+          />
+      </div>
     ) 
   }
 
