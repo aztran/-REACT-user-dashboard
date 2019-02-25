@@ -5,21 +5,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Dependencies 
 
-ANTD Design
-axios
-node-sass
+ANTD Design<br>
+axios<br>
+node-sass<br>
 
 Creating this Web App to fetch data using [jsonplaceholder](https://jsonplaceholder.typicode.com)
 the scenarios are :
 
-• User can view list of users [DONE]
-• User can view list of posts of each user [DONE]
-• User can view list of albums of each user [DONE]
-• User can view the detail of each post and its comment [DONE]
-• User can view list of photos from an album [DONE]
-• User can view the detail of photo [DONE]
-• User can add, edit and delete post, [DONE]
-• User can add, edit and delete comment [DONE]
+• User can view list of users [DONE]<br>
+• User can view list of posts of each user [DONE] <br>
+• User can view list of albums of each user [DONE] <br>
+• User can view the detail of each post and its comment [DONE]<br>
+• User can view list of photos from an album [DONE]<br>
+• User can view the detail of photo [DONE]<br>
+• User can add, edit and delete post, [DONE]<br>
+• User can add, edit and delete comment [DONE]<br>
 
 note : the resource will not be really inserted, updated or delete on the server but it will be faked as if.
 
