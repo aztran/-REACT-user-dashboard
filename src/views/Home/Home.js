@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../../axios';
-import { Row, Col, Divider } from 'antd';
+import { Row, Col } from 'antd';
 
 import './Home.scss'
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Layout, Icon } from 'antd';
+import { Layout } from 'antd';
 import Header from './components/layout/Header/Header';
 import Sidebar from './components/layout/Sidebar/Sidebar';
 import Users from './views/Users/Users';
@@ -39,7 +39,7 @@ class App extends Component {
             >
               <div className="App-sider"> 
                 <div className="App-sider__wrapper">
-                  <img src={logo} className="App-sider--icon"/>
+                  <img src={logo} className="App-sider--icon" alt="logo"/>
                   <h3 class="c-white">Welcome</h3>
                   <h4 class="c-white">User Dashboard</h4>
                 </div>
