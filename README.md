@@ -1,4 +1,30 @@
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Dependencies 
+
+ANTD Design
+axios
+node-sass
+
+Creating this Web App to fetch data using [jsonplaceholder](https://jsonplaceholder.typicode.com)
+the scenarios are :
+
+• User can view list of users [DONE]
+• User can view list of posts of each user [DONE]
+• User can view list of albums of each user [DONE]
+• User can view the detail of each post and its comment [DONE]
+• User can view list of photos from an album [DONE]
+• User can view the detail of photo [DONE]
+• User can add, edit and delete post, [DONE]
+• User can add, edit and delete comment [DONE]
+
+note : the resource will not be really inserted, updated or delete on the server but it will be faked as if.
+
+
+
 
 ## Available Scripts
 
@@ -36,33 +62,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
